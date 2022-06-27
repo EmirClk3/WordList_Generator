@@ -7,6 +7,7 @@ namespace WordList_Generator
     //DOSYA İŞLEMLERİ
     internal class FileProcessClass
     {
+
         ViewClass view = new ViewClass();
         public string NewFileCreate()
         {
@@ -32,7 +33,7 @@ namespace WordList_Generator
             for (int i = 0; i < list.Count; i++)
             {
                 string control = Convert.ToString(list[i]);
-                if(control.Length > 5)
+                if (control.Length > 5)
                 {
                     streamWriter.WriteLine(control);
                 }
@@ -51,7 +52,7 @@ namespace WordList_Generator
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("DOSYA İÇİN KEYWORD BİLGİLERİNİ GİRİN");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            string[] questionArray = { "İsim: ", "Soyisim: ", "Yaşı: ", "Doğum Yılı: ", "Baba Adı: ", "Anne Adı: ", "Kardeş adı: ", "Yaşadığı Şehir: ", "Plakası: ", "Nereli: ", "Plakası: ", "Evcil Hayvan Adı: ","Kullanmak İstediğiniz Sembol(Yoksa Boş Geçebilirsin): ","Eklemek İstediğiniz Keyword Var Mı (Y/N)" };
+            string[] questionArray = { "İsim: ", "Soyisim: ", "Yaşı: ", "Doğum Yılı: ", "Baba Adı: ", "Anne Adı: ", "Kardeş adı: ", "Yaşadığı Şehir: ", "Plakası: ", "Nereli: ", "Plakası: ", "Evcil Hayvan Adı: ", "Kullanmak İstediğiniz Sembol(Yoksa Boş Geçebilirsin): ", "Eklemek İstediğiniz Keyword Var Mı (Y/N)" };
             ArrayList question = new ArrayList();
             for (int i = 0; i < questionArray.Length; i++)
             {
@@ -61,6 +62,16 @@ namespace WordList_Generator
                 string answer = Console.ReadLine();
                 if (answer != "") { question.Add(answer); }
                 else { }
+            }
+
+            if (Convert.ToString(question[question.Count - 2]) != "")
+            {
+                question.RemoveAt(question.Count - 2);
+            }
+            else
+            {
+                question.RemoveAt(question.Count - 2);
+
             }
 
             if (Convert.ToString(question[question.Count - 1]) == "Y")
