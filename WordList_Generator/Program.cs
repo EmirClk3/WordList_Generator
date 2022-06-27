@@ -47,8 +47,30 @@ namespace WordList_Generator
                 Console.Clear();
                 goto START;
             }
-            else if(process == "2"){}
-            Console.ReadLine();
+            else if(process == "2")
+            {
+                DOSYAİSLEM:
+                string[] FileNAMES = fileProcess.FileRead();
+                string cevap = viewer.isimsizmetod(FileNAMES);
+                Console.Clear();
+                viewer.Signature();
+                string quest = viewer.FileProcessingView(cevap);
+                if(quest == "3")
+                {
+                    Console.Write(cevap + "Dosyası silinecek emin misin? (Y/N): ");
+                    string eminmisin = Console.ReadLine();
+                    if(eminmisin == "Y" || eminmisin == "y")
+                    {
+                        fileProcess.FileDelete(cevap);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(cevap + "Dosyası Başarıyla Silindi.\n Ana Menüye Yönlendiriliyosunuz.");
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Thread.Sleep(5000);
+                        goto START;
+                    }
+                    else { goto DOSYAİSLEM; }
+                }
+            }
         }
     }
 }

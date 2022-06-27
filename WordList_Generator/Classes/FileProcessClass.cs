@@ -41,6 +41,15 @@ namespace WordList_Generator
             streamWriter.Close();
 
         }
+        public string[] FileRead()
+        {
+            string[] fileNames = Directory.GetFiles("C:\\WORDLISTS");
+            return fileNames;
+        }
+        public void FileDelete(string path)
+        {
+            File.Delete(path);
+        }
 
     }
 

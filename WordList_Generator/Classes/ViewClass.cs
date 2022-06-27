@@ -9,11 +9,12 @@ namespace WordList_Generator
         //USERINTERFACE METODLARI
         public void Signature()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write(
                 "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
                 "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████████████░░░░░░░░░░░░░░███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░██░░░░░░░░░░░██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░x   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░██░░░░░░░░░░░██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
                 "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╔═══╗░░░░░░░░░░░░░░░░░░░░╔╗░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
                 "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║╔═╗║░░░░░░░░░░░░░░░░░░░░║║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
                 "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░░░░███░░░░░░░░░░░░███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║╚═╝╠══╦══╦══╦╗╔╗╔╦══╦═╦═╝║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
@@ -53,9 +54,9 @@ namespace WordList_Generator
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("WORDLİST OLUŞTURMA UYGULAMASINA HOŞ GELDİN");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\n1- Yeni WordList Dosyası Oluştur\n2- Mevcut Dosyaları Listele");
+            Console.WriteLine("1- Yeni WordList Dosyası Oluştur\n2- Mevcut Dosyaları Listele");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("İşlem Seç: ");
+            Console.Write("\nİşlem Seç: ");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
         public void writer(string text, int speed)
@@ -84,6 +85,37 @@ namespace WordList_Generator
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("5 Saniye Sonra Ana Ekrana Dönülücek!");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
+        }
+        public string FileProcessingView(string path)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("1-)" + path + " Dosya Detayları");
+            Console.WriteLine("2-)" + path + " Dosyayı Tekrar Düzenle");
+            Console.WriteLine("3-)" + path + " Dosyayı Sil\n");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write(path + " Dosyası İçin İşlem Seç: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            string cevap = Console.ReadLine();
+            return cevap;
+        }
+        public string isimsizmetod(string[] _FileNames)
+        {
+            int sayac = 1;
+            Console.Clear();
+            Signature();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(_FileNames[0].Split('\\')[_FileNames[0].Split('\\').Length - 2] + " Dosyasının içindesiniz");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            foreach (var names in _FileNames)
+            {
+                Console.WriteLine(sayac + "-) " + names.Split('\\')[names.Split('\\').Length - 1]);
+                sayac++;
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("\nİşlem Yapmak İstediğiniz Dosya İndexini Girin: ");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            string cevap = _FileNames[Convert.ToInt32(Console.ReadLine()) - 1];
+            return cevap;
         }
         public string NewFileCreateDesign()
         {

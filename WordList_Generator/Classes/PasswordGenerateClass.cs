@@ -9,6 +9,7 @@ namespace WordList_Generator
         {
             SetWordListKeys WordList = new SetWordListKeys();
             ArrayList Passwords = new ArrayList();
+            string sembol = "_-*/";
 
             //İKİLİ KOMBİNASYON
             for (int i = 0; i < PassKeyWord.Count; i++)
@@ -18,19 +19,7 @@ namespace WordList_Generator
                     Passwords.Add(Convert.ToString(PassKeyWord[i]) + Convert.ToString(PassKeyWord[j]));
                 }
             }
-            //ÜÇLÜ KOMBİNASYON
-            for (int i = 0; i < PassKeyWord.Count; i++)
-            {
-                for (int j = 0; j < PassKeyWord.Count; j++)
-                {
-                    for (int k = 0; k < PassKeyWord.Count; k++)
-                    {
-                        
-                    }
-                }
-            }
-            //SEMBOLLER
-            string sembol = "_-*/";
+            //SEMBOLLÜ + ÜÇLÜ KOMBİNASYON
             for (int a = 0; a < sembol.Length ; a++)
             {
                 for (int i = 0; i < PassKeyWord.Count; i++)
